@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class MakesController < ApplicationController
   def index
     #search the make
     uri = URI("http://www.webmotors.com.br/carro/marcas")
@@ -14,5 +14,8 @@ class HomeController < ApplicationController
         Make.create(name: make_params["Nome"], webmotors_id: make_params["Id"])
       end
     end
+  end
+  def search
+   
   end
 end

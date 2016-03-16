@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello world" 
+  back: "Back"
+  titleMark: "Choose manufacturer"
+  btnSearchModel: "Search Templates"
+  pleaseSelectModel: "Please select one model"

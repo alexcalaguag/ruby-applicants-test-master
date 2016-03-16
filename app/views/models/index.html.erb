@@ -3,7 +3,7 @@
 
 <a href="/"><< Voltar</a>
 <ul>
-  <% models.each do |model| %>
+  <% @models.find_each do |model| %>
     <li><%= model.name %></li>
   <% end %>
 </ul>
