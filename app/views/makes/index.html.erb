@@ -1,8 +1,9 @@
-<% makes = Make.all %>
-
 <form action="/makes/search" method="GET">
+  <p>
+  	<span style="color:red"><%=params[:message]%></span>
+  <p>
    <label><%=t('titleMark')%>:</label>
-   <%= collection_select(:make, :webmotors_id, makes, :webmotors_id, :name,{:prompt => t('pleaseSelectModel')}) %>
+   <%= collection_select(:make, :webmotors_id, @makes, :webmotors_id, :name,{:prompt => t('pleaseSelectModel')}) %>
   </p>
    <%= submit_tag(t('btnSearchModel')) %>
 </form>

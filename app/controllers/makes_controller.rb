@@ -1,21 +1,20 @@
 class MakesController < ApplicationController
+  include MakeHelper
+
   def index
-    #search the make
-    uri = URI("http://www.webmotors.com.br/carro/marcas")
-
-    # Make request for Webmotors site
-    response = Net::HTTP.post_form(uri, {})
-    json = JSON.parse response.body
-
-    #debugger
-    # Itera no resultado e grava as marcas que ainda não estão persistidas
-    json.each do |make_params|
-      if Make.where(name: make_params["Nome"]).size == 0
-        Make.create(name: make_params["Nome"], webmotors_id: make_params["Id"])
-      end
-    end
+    initialize_make
+    @makes= Make.all.order(name: :asc)
   end
+
   def search
-   
-  end
+    param_make =params[:make]
+    param_webmotors_id = param_make[:webmotors_id]
+    if param_webmotors_id.empty?
+      redirect_to(controller: 'makes', message: t('pleaseSelectModel'))
+    else
+       redirect_to(controller: 'models', webmotors_id: param_webmotors_id)
+    end
+   end
+
+
 end
