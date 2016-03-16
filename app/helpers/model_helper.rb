@@ -6,11 +6,12 @@ module ModelHelper
     populate_models(models_json_data , {'webmotors_id'=>web_motors_id})
   end
   private
+  #Persist in the database the models of information returned from WEBMOTOR service
   def populate_models (models_json_data,param)
-    make = Make.where(param)[0]
+    maker = Make.where(param)[0]
     models_json_data.each do |model_data|
-      if Model.where(name: model_data["Nome"], make_id: make.id).size == 0
-        Model.create(make_id: make.id, name: model_data["Nome"])
+      if Model.where(name: model_data["Nome"], make_id: maker.id).size == 0
+        Model.create(make_id: maker.id, name: model_data["Nome"])
       end
     end
   end

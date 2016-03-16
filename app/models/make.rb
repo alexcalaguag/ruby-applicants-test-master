@@ -1,7 +1,7 @@
 class Make < ActiveRecord::Base
- 	URL_MAKE = "http://www.webmotors.com.br/carro/marcas"
+ 	URL_MAKER = "http://www.webmotors.com.br/carro/marcas"
  	
-	def self.getAllMakeDesc
+	def self.getAllMakerDesc
 		return Make.all.order(name: :asc)
     end 
 end

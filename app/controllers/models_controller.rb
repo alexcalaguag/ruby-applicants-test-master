@@ -3,6 +3,6 @@ class ModelsController < ApplicationController
 
   def index
     initialize_models(params[:webmotors_id]);
-    @models = Model.getModelsByMakeId(params[:webmotors_id])
+    @models = Model.getModelsByMakerId(params[:webmotors_id])
   end
 end

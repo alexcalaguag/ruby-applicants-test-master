@@ -22,6 +22,6 @@
 en:
   hello: "Hello world" 
   back: "Back"
-  titleMark: "Choose manufacturer"
+  titleMarker: "Choose manufacturer"
   btnSearchModel: "Search Templates"
-  pleaseSelectModel: "Please select one model"
+  pleaseSelectMarker: "Please select one mark"

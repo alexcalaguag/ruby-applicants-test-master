@@ -1,6 +1,6 @@
 "pt-BR":
     hello: "Olá"
     back: "Voltar"
-    titleMark: "Escolha Fabricante"
+    titleMarker: "Escolha Fabricante"
     btnSearchModel: "Procurar Modelos"
-    pleaseSelectModel: "Selecione um modelo" 
+    pleaseSelectMarker: "Selecione uma Marca" 
