@@ -6,7 +6,7 @@ RSpec.describe ModelHelper, :type => :helper do
  	  makeId = 4;
 	  Make.create(:id => makeId,:webmotors_id => makeId)
  	  initialize_models(makeId)
-	  models = Model.where(make_id: makeId).order(name: :asc)
+	  models = Model.getModelsByMakeId(makeId)
       expect(models).not_to be_empty
     end
   end

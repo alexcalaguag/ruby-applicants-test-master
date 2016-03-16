@@ -1,4 +1,4 @@
-<a href="/"><< Voltar</a>
+<%= link_to  t('back'), :back %>
 <ul>
   <% @models.find_each do |model| %>
     <li><%= model.name %></li>
