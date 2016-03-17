@@ -4,7 +4,7 @@ class MakersController < ApplicationController
   def index
 
     initialize_maker
-    @makers= Make.getAllMakerDesc
+    @makers= Make.get_all_maker_desc
 
   end
 
