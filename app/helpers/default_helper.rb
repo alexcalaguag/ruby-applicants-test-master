@@ -1,5 +1,7 @@
 module DefaultHelper
-  #Search informacion via url returning it in json format	
+
+  # Find information via http returned in JSON format	
+
   def search_json_data (url,param={})
       uri = URI(url)
       response = Net::HTTP.post_form(uri, param)

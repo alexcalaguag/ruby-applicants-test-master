@@ -2,16 +2,23 @@ module MakerHelper
   include DefaultHelper
   
   def initialize_maker
+
     populate_maker(search_json_data (Make::URL_MAKER))
+
   end
+
   private
-  #Persist in the database the maker of information returned from WEBMOTOR service
+
+  # Persist in the bank the manufacturer's data returned by the service WEBMOTORS
+  
   def populate_maker (maker_json)
+
      maker_json.each do |maker_data|
       if maker_data["Nome"].length !=0 && Make.where(name: maker_data["Nome"]).size == 0
-           Make.create(webmotors_id: maker_data["Id"], name: maker_data["Nome"])
+        Make.create(webmotors_id: maker_data["Id"], name: maker_data["Nome"])
       end
      end 
+
   end
 end
 
